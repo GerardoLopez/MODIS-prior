@@ -126,6 +126,11 @@ from IPython import embed
 DataDir = sys.argv[1]
 DoY = sys.argv[2]
 
+if len(DoY)==1:
+	DoY='00' + DoY
+elif len(DoY)==2:
+	DoY='0' + DoY
+
 FileList, Year = GetFileList(DataDir, DoY)
 
 # From the first file get dimensions
